@@ -18,9 +18,14 @@ You are provided with an Excel sheet containing 3000 Job Descriptions (JDs). You
 ## Guidelines for Research & Model Selection
 
 • Share the Final Running code
+
 • Share the generated output excel sheet
+
 • Think of a holistic algorithm to start out to Extract “Total Years of Experience” as mentioned
 in JD
+
 • Go through data well, and the variations in JD
+
 • According to you which is the best approach
+
 • In case of writing a prompt, be vigilant to which prompt should be used for which model
