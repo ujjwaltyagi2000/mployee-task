@@ -1,0 +1,9 @@
+pandas
+openpyxl
+transformers
+langchain
+tqdm
+joblib
+scikit-learn
+openai
+sentence-transformers
