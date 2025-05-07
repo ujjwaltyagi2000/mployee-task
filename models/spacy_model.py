@@ -1,5 +1,3 @@
-# models/spacy_model.py
-
 import spacy
 
 WORD_NUM_MAP = {
