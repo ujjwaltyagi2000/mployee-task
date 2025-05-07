@@ -1,4 +1,4 @@
-from models import spacy_model, hf_roberta, groq_llama3
+from models import spacy_model, hf_roberta, groq_llama3, hf_tiny_roberta
 import pandas as pd
 
 # Load JD dataset and take a sample of 20
@@ -20,6 +20,9 @@ sample_df["hf_roberta_experience"] = sample_df["JD_Text"].apply(
 
 sample_df["groq_experience"] = sample_df["JD_Text"].apply(
     lambda x: groq_llama3.extract_experience_llama3(str(x))
+)
+sample_df["hf_tiny_roberta_experience"] = sample_df["JD_Text"].apply(
+    lambda x: hf_tiny_roberta.extract_experience_tiny_roberta(str(x))
 )
 
 # Save output

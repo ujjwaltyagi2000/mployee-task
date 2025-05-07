@@ -1,20 +1,28 @@
 from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
 
-MODEL_NAME = "deepset/roberta-base-squad2"
+MODEL_NAME = "deepset/tinyroberta-squad2"
 
-# Load tokenizer and model locally (won’t download from the internet)
+# Load tokenizer and model locally
 try:
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, local_files_only=True)
     model = AutoModelForQuestionAnswering.from_pretrained(
         MODEL_NAME, local_files_only=True
     )
-    qa_pipeline = pipeline("question-answering", model=model, tokenizer=tokenizer)
+    qa_pipeline = pipeline(
+        "question-answering",
+        model="deepset/tinyroberta-squad2",
+        tokenizer="deepset/tinyroberta-squad2",
+        local_files_only=True,
+    )
+
 except Exception as e:
-    print(f"[Model Load Error] Make sure the model is downloaded locally.\n{e}")
+    print(
+        f"[Model Load Error - TinyRoBERTa] Make sure the model is downloaded locally.\n{e}"
+    )
     qa_pipeline = None
 
 
-def extract_experience_hf_roberta(jd_text: str) -> str:
+def extract_experience_tiny_roberta(jd_text: str) -> str:
     if qa_pipeline is None:
         return "Error: Model not loaded"
 
@@ -30,5 +38,5 @@ def extract_experience_hf_roberta(jd_text: str) -> str:
             return "Not mentioned"
 
     except Exception as e:
-        print(f"[HF RoBERTa Error] {e}")
+        print(f"[TinyRoBERTa Error] {e}")
         return "Error"
