@@ -1,4 +1,4 @@
-name: mployee-task
+name: jd-extraction
 channels:
   - defaults
   - conda-forge
