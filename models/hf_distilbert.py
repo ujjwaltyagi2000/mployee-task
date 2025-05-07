@@ -1,8 +1,7 @@
 from transformers import pipeline, AutoTokenizer, AutoModelForQuestionAnswering
 
-MODEL_NAME = "deepset/roberta-base-squad2"
+MODEL_NAME = "distilbert/distilbert-base-cased-distilled-squad"
 
-# Load tokenizer and model locally (won’t download from the internet)
 try:
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, local_files_only=True)
     model = AutoModelForQuestionAnswering.from_pretrained(
@@ -14,7 +13,7 @@ except Exception as e:
     qa_pipeline = None
 
 
-def extract_experience_hf_roberta(jd_text: str) -> str:
+def extract_experience_hf_distilbert(jd_text: str) -> str:
     if qa_pipeline is None:
         return "Error: Model not loaded"
 
@@ -30,5 +29,5 @@ def extract_experience_hf_roberta(jd_text: str) -> str:
             return "Not mentioned"
 
     except Exception as e:
-        print(f"[HF RoBERTa Error] {e}")
+        print(f"[HF DistilBERT Error] {e}")
         return "Error"

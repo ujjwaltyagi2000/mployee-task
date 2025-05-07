@@ -29,7 +29,7 @@ def extract_experience_tiny_roberta(jd_text: str) -> str:
     question = "How many years of experience is required for this job?"
 
     try:
-        result = qa_pipeline({"context": jd_text, "question": question})
+        result = qa_pipeline(question=question, context=jd_text)
         answer = result["answer"].strip()
 
         if any(char.isdigit() for char in answer):
