@@ -96,7 +96,19 @@ GROQ_API_KEY=your_api_key_here
 
 > ⚠️ Make sure your `.env` file is included in `.gitignore` to avoid committing your API key.
 
+## Download en_core_web_sm
+
+```bash
+python -m spacy download en_core_web_sm
+```
+
 ## Running the Scripts
+
+### Verify Setup
+
+```bash
+python verify_setup.py
+```
 
 ### Run the Full Pipeline
 
