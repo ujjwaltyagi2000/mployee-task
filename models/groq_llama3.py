@@ -1,5 +1,8 @@
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # This will load variables from a .env file into the environment
 
 # Load API key (set this in your .env or hardcode for now)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")

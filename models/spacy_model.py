@@ -26,7 +26,12 @@ WORD_NUM_MAP = {
 
 
 def load_model():
-    return spacy.load("en_core_web_sm")
+    try:
+        return spacy.load("en_core_web_sm")
+    except OSError:
+        print("[SpaCy] Model not found. Downloading 'en_core_web_sm'...")
+        download("en_core_web_sm")
+        return spacy.load("en_core_web_sm")
 
 
 def extract_experience_years(text, nlp):
