@@ -146,7 +146,7 @@ Based on our evaluation:
 - **SpaCy** was the fastest but less semantically deep
 - **Transformers (RoBERTa, DistilBERT)** were accurate but very slow
 
-> For practical purposes, **LLaMA3** is recommended if API limits are not an issue. Else, SpaCy offers a fast, no-cost fallback.
+### For practical purposes, **LLaMA3** is recommended if API limits are not an issue.
 
 ## Notes
 
